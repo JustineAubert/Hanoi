@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Pile<T> extends ArrayList{
     final int capacite;
     protected ArrayList<T> pile = new ArrayList();
-    // suppose 'capa' strictement positif !
+    
     public Pile(int capa) throws ErreurPile{
         if(capa>0)
         	this.capacite=capa;
@@ -26,10 +26,8 @@ public class Pile<T> extends ArrayList{
     	if(pile.size()<1) {
     		pile.remove(pile.size()-1);
     	}else throw new ErreurPile();
-    	
     }
 
-    
     // renvoie le sommet de la pile mais ne le depile pas.
     // Doit lever l'exception si la pile est vide.
     public T sommet() throws ErreurPile{
@@ -55,11 +53,6 @@ public class Pile<T> extends ArrayList{
 
     /* on imprime le sommet de pile au dessus ! */
     public void affiche () throws ErreurPile{ 
-    	/*try {
-			System.out.println(pile.get(sommet-1));
-		} catch (ErreurPile e) {
-			throw new ErreurPile();
-		}*/
     	if(pile.isEmpty()==false) {
     		for(int i=pile.size()-1;i>=0;i-=1) {
     			System.out.println(pile.get(i));

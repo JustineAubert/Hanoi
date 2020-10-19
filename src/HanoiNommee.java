@@ -20,7 +20,7 @@ public class HanoiNommee extends Hanoi {
     }
 
 
-    static public void main (String[] args) throws ErreurPile, ErreurTour {
+    static public void main (String[] args) throws ErreurPile {
 	ArrayList<Disque> a = new ArrayList<>();
 
 	for(int i = 6; i > 0; i -= 1) {
@@ -28,7 +28,11 @@ public class HanoiNommee extends Hanoi {
 	}
 	HanoiNommee h = new HanoiNommee(a);
         h.affiche();
-	h.jouer();
+	try {
+		h.jouer();
+	} catch (ErreurTour e) {
+		throw new ErreurPile();
+	}
 	System.out.println("Situation finale:");
         h.affiche();
     }

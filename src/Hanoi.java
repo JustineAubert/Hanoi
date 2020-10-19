@@ -47,7 +47,7 @@ public class Hanoi {
 	}
     }
 
-    static public void main (String[] args) throws ErreurPile, ErreurTour {
+    static public void main (String[] args) throws ErreurPile {
 	ArrayList<Disque> a = new ArrayList<>();
 
 	// ArrayList fait un premier essai avec des Disques
@@ -57,7 +57,11 @@ public class Hanoi {
 	}
 	Hanoi h = new Hanoi(a);
 	h.affiche();
-	h.jouer();
+	try {
+		h.jouer();
+	} catch (ErreurTour e) {
+		throw new ErreurPile();
+	}
 	System.out.println("Situation finale:");
         h.affiche();
 
@@ -69,7 +73,11 @@ public class Hanoi {
 	}
         h = new Hanoi(a);
 	h.affiche();
-	h.jouer();
+	try {
+		h.jouer();
+	} catch (ErreurTour e) {
+		throw new ErreurPile();
+	}
 	System.out.println("Situation finale:");
         h.affiche();
 
@@ -81,7 +89,11 @@ public class Hanoi {
 	}
         h = new Hanoi(a);
 	h.affiche();
-	h.jouer();
+	try {
+		h.jouer();
+	} catch (ErreurTour e) {
+		throw new ErreurPile();
+	}
 	System.out.println("Situation finale:");
         h.affiche();
     }

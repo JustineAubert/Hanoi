@@ -1,7 +1,6 @@
 
 public class ErreurTour extends Exception {
-	;
-
+	
 	public ErreurTour() {
 		super();
 	    }
