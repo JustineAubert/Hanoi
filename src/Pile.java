@@ -55,10 +55,18 @@ public class Pile<T> extends ArrayList{
 
     /* on imprime le sommet de pile au dessus ! */
     public void affiche () throws ErreurPile{ 
-    	try {
-			System.out.println(sommet());
+    	/*try {
+			System.out.println(pile.get(sommet-1));
 		} catch (ErreurPile e) {
 			throw new ErreurPile();
-		}
+		}*/
+    	if(pile.isEmpty()==false) {
+    		for(int i=pile.size()-1;i>=0;i-=1) {
+    			System.out.println(pile.get(i));
+    		}
+    	}
+    	else {
+    		System.out.println("");
+    	}
     }
 }
